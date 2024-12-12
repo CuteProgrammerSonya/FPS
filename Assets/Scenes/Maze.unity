@@ -1074,7 +1074,7 @@ GameObject:
   - component: {fileID: 494652267}
   - component: {fileID: 494652273}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Maze (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21171,7 +21171,7 @@ GameObject:
   - component: {fileID: 669555409}
   - component: {fileID: 669555408}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Maze (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34473,7 +34473,7 @@ GameObject:
   - component: {fileID: 729335488}
   - component: {fileID: 729335487}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Maze (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47621,7 +47621,7 @@ GameObject:
   - component: {fileID: 789539994}
   - component: {fileID: 789539993}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Maze (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76306,10 +76306,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 705507995}
-  - {fileID: 494652272}
   - {fileID: 1291991139}
+  - {fileID: 494652272}
   - {fileID: 669555413}
   - {fileID: 729335492}
+  - {fileID: 789539998}
   - {fileID: 1042881571}
   - {fileID: 1275177288}
   - {fileID: 21229202}
@@ -76317,4 +76318,3 @@ SceneRoots:
   - {fileID: 1651363535}
   - {fileID: 392764967}
   - {fileID: 837011036}
-  - {fileID: 789539998}
