@@ -463,7 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b847da47fbe5e409860eac22f0aa03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1382084403}
   coverChangeDistance: 5
   attackRange: 10
   shootingRange: 15
@@ -21007,7 +21007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b847da47fbe5e409860eac22f0aa03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1382084403}
   coverChangeDistance: 5
   attackRange: 10
   shootingRange: 15
@@ -48951,6 +48951,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351149271}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1382084403 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4459864850019384738, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
+  m_PrefabInstance: {fileID: 837011036}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1410930027
 GameObject:
   m_ObjectHideFlags: 0
@@ -49885,7 +49890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49b847da47fbe5e409860eac22f0aa03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1382084403}
   coverChangeDistance: 5
   attackRange: 10
   shootingRange: 15
