@@ -55,7 +55,7 @@ public class MazeGenerator : MonoBehaviour
         new_index = random_index;
         if (random_index == 1 || random_index == 2) // 2 or 3 maze
         {
-            Vector3 position = new Vector3(-0.8f, 0f, first_pos - offset_z_1);
+            Vector3 position = new Vector3(-0.8f, -0.75f, first_pos - offset_z_1);
             first_pos -= offset_z_1;
             if (random_index == 1)
             {
