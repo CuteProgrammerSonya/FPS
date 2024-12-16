@@ -4,28 +4,29 @@ using UnityEngine;
 
 public class MazeGenerator : MonoBehaviour
 {
-    public GameObject maze_1; // first maze
-    public GameObject maze_2; // second maze
-    public GameObject maze_3; // third maze
-    public GameObject maze_4; // fourth maze
-    public GameObject player; // player
-    private GameObject first_maze; // first maze on the scene
-    private GameObject second_maze; // second maze on the scene
-    private float offset_z_1 = 92.6f; // offset for maze pairs: (1; 2), (1; 3), (2; 3), (3; 2), (4; 2), (4; 3)
-    private float offset_z_2 = 80.1f; // offset for maze pairs: (2; 1), (3; 1), (1; 4), (4; 1), (2; 4), (3; 4)
-    private int[] maze_indexes = { -1, -1, -1, -1 }; // array with indexes
+    public GameObject maze_1;
+    public GameObject maze_2;
+    public GameObject maze_3;
+    public GameObject maze_4;
+    public GameObject player;
+    private GameObject first_maze;
+    private GameObject second_maze;
+    private float offset_z_1 = 92.6f;
+    private float offset_z_2 = 80.1f;
+    private int[] maze_indexes = { -1, -1, -1, -1 };
     private float first_pos = -6.5f;
     private float start_position;
     private int index;
     private int new_index;
+
     void Start()
     {
-        start_position = player.transform.position.z; // start player position
-        maze_indexes[0] = 0; // add first index
+        start_position = player.transform.position.z;
+        maze_indexes[0] = 0;
         index = 0;
         new_index = 0;
-        Vector3 position = new Vector3(-0.8f, 0f, first_pos); // cordinates for a first maze
-        first_maze = Instantiate(maze_1, position, Quaternion.Euler(0, 0, 0)); // create a first maze
+        Vector3 position = new Vector3(-0.8f, 0f, first_pos);
+        first_maze = Instantiate(maze_1, position, Quaternion.Euler(0, 0, 0));
         second_maze = GenerateRandomMaze(ref maze_indexes, ref first_pos, ref new_index);
     }
 
@@ -53,7 +54,7 @@ public class MazeGenerator : MonoBehaviour
         }
         maze_indexes[count + 1] = random_index;
         new_index = random_index;
-        if (random_index == 1 || random_index == 2) // 2 or 3 maze
+        if (random_index == 1 || random_index == 2)
         {
             Vector3 position = new Vector3(-0.8f, -0.75f, first_pos - offset_z_1);
             first_pos -= offset_z_1;
@@ -66,7 +67,7 @@ public class MazeGenerator : MonoBehaviour
                 return Instantiate(maze_3, position, Quaternion.Euler(0, 0, 90));
             }
         }
-        else // 1 or 4 maze
+        else
         {
             Vector3 position = new Vector3(-0.8f, 0f, first_pos - offset_z_2);
             first_pos -= offset_z_2;
@@ -80,6 +81,7 @@ public class MazeGenerator : MonoBehaviour
             }
         }
     }
+
     void Update()
     {
         if (index == 0 || index == 3)
@@ -101,6 +103,9 @@ public class MazeGenerator : MonoBehaviour
                     first_maze = second_maze;
                     index = new_index;
                     second_maze = GenerateRandomMaze(ref maze_indexes, ref first_pos, ref new_index);
+
+                    // Пополнение гранат
+                    RefillGrenades();
                 }
             }
         }
@@ -123,8 +128,20 @@ public class MazeGenerator : MonoBehaviour
                     first_maze = second_maze;
                     index = new_index;
                     second_maze = GenerateRandomMaze(ref maze_indexes, ref first_pos, ref new_index);
+
+                    // Пополнение гранат
+                    RefillGrenades();
                 }
             }
+        }
+    }
+
+    private void RefillGrenades()
+    {
+        GrenadeWeapon grenadeWeapon = player.GetComponent<GrenadeWeapon>();
+        if (grenadeWeapon != null)
+        {
+            grenadeWeapon.RefillGrenades();
         }
     }
 }

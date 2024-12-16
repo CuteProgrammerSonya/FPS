@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cover
+  - body
+  - blood
+  - eq
+  - Enemy
   layers:
   - Default
   - TransparentFX
