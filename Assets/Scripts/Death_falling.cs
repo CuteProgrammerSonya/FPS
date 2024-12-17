@@ -15,6 +15,8 @@ public class ReturnToMainMenu : MonoBehaviour
 
     void LoadMainMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene("Menu");
     }
 }
