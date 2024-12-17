@@ -9,6 +9,7 @@ TagManager:
   - blood
   - eq
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

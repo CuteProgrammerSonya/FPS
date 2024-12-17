@@ -8,10 +8,11 @@ using UnityEngine.UI;
     using UnityEditor;
     using System.Net;
 #endif
-
+using UnityEngine.SceneManagement;
 public class FirstPersonController : MonoBehaviour
 {
     private Rigidbody rb;
+    int health = 10;
 
     #region Camera Movement Variables
 
@@ -124,7 +125,26 @@ public class FirstPersonController : MonoBehaviour
     private float timer = 0;
 
     #endregion
-
+    private void OnTriggerEnter(Collider other)
+    {
+        // Проверяем, попала ли пуля в игрока
+        Debug.Log("Bullet: ");
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(1); // Уменьшаем здоровье на 1
+        }
+    }
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Health:" + health);
+        if (health <= 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("Menu");
+        }
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
